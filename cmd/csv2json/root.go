@@ -28,6 +28,11 @@ func main() {
 		separator = "comma"
 		check(err)
 		break
+	case flag.NArg() == 1:
+		data, err = ioutil.ReadFile(flag.Arg(0))
+		separator = "comma"
+		check(err)
+		break
 	case flag.NArg() > 1:
 		data, err = ioutil.ReadFile(flag.Arg(0))
 		separator = flag.Arg(1)
